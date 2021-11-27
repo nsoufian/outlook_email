@@ -32,10 +32,10 @@ def main(login, password,subject, body, recipeints, delay):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('Send email via outlook...')
     parser.add_argument('--subject', '-s', required=True,type=str, help="Subject of the email to send.")
-    parser.add_argument('--body', '-b', required=True, type=argparse.FileType('r'), help="Body of the email to send.")
+    parser.add_argument('--body', '-b', required=True, type=argparse.FileType('r'), help="Path of file contains the body of the email to send.")
     parser.add_argument('--login', '-l', required=True, type=str, help="Outlook account login.")
     parser.add_argument('--password', '-p', required=True, type=str, help="Outlook account password.")
-    parser.add_argument('--emails', '-e', required=True, type=argparse.FileType('r'), help="Path of email list.")
+    parser.add_argument('--emails', '-e', required=True, type=argparse.FileType('r'), help="Path of file contains emails separated by new line..")
     parser.add_argument('--delay', '-d', type=int, default=1, help="Number of second to wait between each email.")
     args = parser.parse_args()
 
